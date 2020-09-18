@@ -1,5 +1,6 @@
 #!/usr/local/bin/python
 import hcl
+import sys
 import glob
 
 ext = ('*.tf', '*.tfvars')
@@ -16,3 +17,4 @@ for file in files:
             sub = 2 if 'unexpected LEFT' in error else 1
             line = str(open(file).readlines()[int(error.split(':')[0].split(',')[0].split()[1])-sub]).strip()
             print("[{}] => [{}] => [{}]".format(file, line, error))
+            sys.exit(1)
