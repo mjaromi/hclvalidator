@@ -5,8 +5,11 @@ import glob
 
 ext = ('*.tf', '*.tfvars')
 files = []
+
+path = sys.argv[1] if len(sys.argv) == 2 else '.'
+    
 for file in ext:
-    files.extend(glob.glob(file))
+    files.extend(glob.glob(path + '/' + file))
 
 for file in files:
     with open(file, 'r') as tffile:
