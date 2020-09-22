@@ -3,8 +3,8 @@ Simple [HCL](https://github.com/hashicorp/hcl#hcl) validator for `*.tf` and `*.t
 
 ## Installation
 ```
-sudo wget -O /usr/local/bin/hclvalidator https://raw.githubusercontent.com/mjaromi/hclvalidator/master/hclvalidator.py
-sudo chmod +x /usr/local/bin/hclvalidator
+$ sudo wget -O /usr/local/bin/hclvalidator https://raw.githubusercontent.com/mjaromi/hclvalidator/master/hclvalidator.py
+$ sudo chmod +x /usr/local/bin/hclvalidator
 ```
 
 ## Usage
