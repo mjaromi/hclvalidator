@@ -2,14 +2,18 @@
 import hcl
 import sys
 import glob
+import os
 
 ext = ('*.tf', '*.tfvars')
 files = []
 
 path = sys.argv[1] if len(sys.argv) == 2 else '.'
-    
-for file in ext:
-    files.extend(glob.glob(path + '/' + file))
+
+if os.path.isdir(path):
+    for file in ext:
+        files.extend(glob.glob(path + '/' + file))
+else:
+    files = [path]
 
 for file in files:
     with open(file, 'r') as tffile:
